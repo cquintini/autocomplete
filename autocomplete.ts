@@ -574,7 +574,7 @@ export default function autocomplete<T extends AutocompleteItem>(settings: Autoc
         if (destroyed) return;
         const savedFetchCounter = ++fetchCounter;
         settings.fetch(inputText, function (elements: T[] | false): void {
-            if (fetchCounter === savedFetchCounter && elements) {
+            if (elements) {
                 items = elements;
                 inputValue = inputText;
                 selected = (items.length < 1 || disableAutoSelect) ? undefined : items[0];
